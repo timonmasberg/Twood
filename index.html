@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Mood Analyzer</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+	<div class="row" id="search-wrapper">
+		<div class="input-field col s12 m3 offset-m2">
+			<input placeholder="Dein Suchwert" id="search-input" type="text" class="validate">
+		</div>
+		<div class="input-field col s2 m2">
+			<ul id="dropdown" class="dropdown-content">
+				<li><a href="javascript:changeZeitraum(0);">Heute</a></li>
+				<li><a href="javascript:changeZeitraum(1);">Gestern</a></li>
+				<li><a href="javascript:changeZeitraum(2);">2 Tage</a></li>
+				<li><a href="javascript:changeZeitraum(14);">14 Tage</a></li>
+			</ul>
+			<a class="btn dropdown-button" id="zeitraum-input" href="#" data-activates="dropdown">Zeitraum<i class="mdi-navigation-arrow-drop-down right"></i></a>
+
+		</div>
+
+
+
+		<div class="input-field col s12 m5">
+			<a href="javascript:start()" class="waves-effect waves-light btn">stimmung ermitteln</a>
+		</div>
+	</div>
+    	<script>
+        var zeitraum = 0;
+        function changeZeitraum(tage){
+            zeitraum = tage;
+            $("#zeitraum-input").html(zeitraum + " Tage");
+        }
+        
+        function start(){
+            var suchwert = $("#search-input").value;
+        }
+
+    </script>
+</body>
+
+
+</html>
